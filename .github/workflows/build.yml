@@ -1,0 +1,13 @@
+name: Smart-X build and checks
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet build src/SmartX.Api/SmartX.Api.csproj -c Release
+      - run: dotnet run --project tests/SmartX.Checks -c Release
+      - run: node --check src/SmartX.Api/wwwroot/app.js

@@ -1,0 +1,6 @@
+SIMULATED HARDWARE LOG
+[BOOT] ESP32-HYDRO-01 startup
+[CONFIG] expected interval: 5 seconds
+[SENSOR] soil moisture probe calibration loaded
+[NETWORK] gateway registration complete
+[WARN] demonstration connection timeout

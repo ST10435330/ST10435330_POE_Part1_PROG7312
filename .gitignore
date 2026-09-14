@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+**/data/
+.vs/
+.idea/
+*.user
+*.suo
+node_modules/
+
+.vs/
+**/bin/
+**/obj/

@@ -1,0 +1,106 @@
+/* General page layout */
+:root {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #222;
+    background: #f1f1f1;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 15px 24px;
+    background: #364b63;
+    color: white;
+}
+header a { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+header span:last-child { margin-left: auto; font-size: 12px; }
+main { max-width: 1500px; margin: auto; padding: 24px; }
+h1 { font-size: 28px; margin: 12px 0 20px; line-height: 1.25; }
+h2 { font-size: 18px; margin: 8px 0 14px; }
+p { color: #444; }
+a { color: #245c92; }
+.eyebrow, small { font-size: 12px; color: #555; }
+
+/* Buttons and form fields */
+button {
+    font: inherit;
+    padding: 8px 12px;
+    border: 1px solid #244c74;
+    border-radius: 3px;
+    background: #386c9d;
+    color: white;
+    cursor: pointer;
+}
+button:hover { background: #2b5780; }
+button:disabled { background: #e2e2e2; color: #666; border-color: #bbb; cursor: not-allowed; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #b17a00; outline-offset: 3px; }
+label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 13px; }
+input, select {
+    display: block;
+    width: 100%;
+    font: inherit;
+    padding: 8px;
+    margin: 5px 0 12px;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    color: #222;
+    background: white;
+}
+
+/* Main menu */
+#landing { padding: 15px 0; }
+#landing > p { max-width: 720px; }
+#landing h1 { font-size: 32px; }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+.pillars button { text-align: left; padding: 20px; min-height: 190px; }
+.pillars button:first-child { background: #e4edf6; color: #222; border-color: #839eb9; }
+.pillars p { color: inherit; }
+
+/* Dashboard panels */
+.titlebar, .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.row { flex-wrap: wrap; }
+.metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 16px; }
+.metric { background: white; border: 1px solid #bbb; padding: 12px; }
+.metric b { display: block; font-size: 24px; }
+.metric span { font-size: 12px; }
+.grid { display: grid; grid-template-columns: 245px minmax(340px, 1fr) 220px; gap: 16px; align-items: start; }
+.panel { background: white; border: 1px solid #bbb; padding: 16px; margin-bottom: 16px; }
+.sensor-list { max-height: 430px; overflow: auto; margin: 14px 0; }
+.sensor-list button, #alerts button { display: block; width: 100%; text-align: left; background: #eee; border-color: #ccc; color: #222; margin: 6px 0; }
+.sensor-list button:hover, #alerts button:hover { background: #e0e8ef; }
+.sensor-list button.selected { background: #dce9f5; border-color: #6e91b3; }
+.sensor-list small, #alerts small { display: block; font-size: 11px; }
+.badge { padding: 4px 8px; background: #eee; border: 1px solid #bbb; font-size: 12px; }
+.badge.warn { background: #fff0c4; color: #684600; }
+.badge.off { background: #f8d8d4; color: #8b2117; }
+.reading { font-size: 28px; }
+#chart { width: 100%; height: auto; margin-top: 16px; background: white; border: 1px solid #ccc; }
+#lastSeen, #location, #rule { font-size: 12px; }
+.advice { background: #f3f3f3; padding: 10px; }
+details { border-top: 1px solid #ccc; margin-top: 16px; padding-top: 12px; }
+summary { cursor: pointer; font-weight: bold; }
+pre { overflow: auto; max-height: 240px; background: #f1f1f1; padding: 12px; font-size: 12px; white-space: pre-wrap; word-break: break-word; }
+#message { min-height: 22px; font-weight: bold; }
+#message.error { color: #a0291b; }
+footer { text-align: center; color: #555; padding: 20px; font-size: 12px; }
+
+/* Smaller screens */
+@media (max-width: 1100px) {
+    .grid { grid-template-columns: 230px minmax(0, 1fr); }
+    .grid > aside:last-child { grid-column: 1 / -1; }
+    .metrics { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+    .grid, .pillars { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    header span:nth-child(2) { display: none; }
+    .titlebar { flex-wrap: wrap; }
+    .grid > aside:last-child { grid-column: auto; }
+    main { padding: 14px; }
+    .sensor-list { max-height: 180px; }
+}

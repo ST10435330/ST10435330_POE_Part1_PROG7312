@@ -1,0 +1,10 @@
+{
+  "deviceIdentifier": "ESP32-HYDRO-01",
+  "sensor": "soil-moisture",
+  "valueType": "float",
+  "unit": "%",
+  "expectedIntervalSeconds": 5,
+  "deployment": ["Facility A", "Zone 1", "Sub-Zone B"],
+  "transport": "HTTP simulation",
+  "note": "Demonstration attachment, not firmware consumed automatically by the gateway."
+}
